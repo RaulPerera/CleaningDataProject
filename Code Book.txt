@@ -1,0 +1,117 @@
+Code Book for "rundata"
+(NOTE: rundata_mean has the same fields with one exception.  rundata_mean is aggregated at the level of
+	activity and subject.  Each measure is the mean of the individual measurements for that variable
+	(i.e. for subject 7, activity sitting
+	"tbodyaccjerk-std()-y in "rundata" measures the standard deviation of the signals within a 
+		specific signal window sample
+	"tbodyaccjerk-std()-y_mean" in "rundata_mean" is the mean across signal window samples that Subject 7 was tested
+		in while sitting
+	)
+)
+=================
+DIMENSIONS
+Activity:
+The activity being done by the subject when this row's data was recorded
+	WALKING
+
+	WALKING_UPSTAIRS
+	WALKING_DOWNSTAIRS
+
+	SITTING
+
+	STANDING
+	LAYING
+
+
+Subject:
+An integer from 1-30 indicating which subject corresponds to this record
+
+MEASUREMENTS:
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+Below is the complete list of fields in this file.
+
+ [1] "activity"                             "Subject"                             
+ [3] "tbodyacc-mean()-x"                    "tbodyacc-mean()-y"                   
+ [5] "tbodyacc-mean()-z"                    "tbodyacc-std()-x"                    
+ [7] "tbodyacc-std()-y"                     "tbodyacc-std()-z"                    
+ [9] "tgravityacc-mean()-x"                 "tgravityacc-mean()-y"                
+[11] "tgravityacc-mean()-z"                 "tgravityacc-std()-x"                 
+[13] "tgravityacc-std()-y"                  "tgravityacc-std()-z"                 
+[15] "tbodyaccjerk-mean()-x"                "tbodyaccjerk-mean()-y"               
+[17] "tbodyaccjerk-mean()-z"                "tbodyaccjerk-std()-x"                
+[19] "tbodyaccjerk-std()-y"                 "tbodyaccjerk-std()-z"                
+[21] "tbodygyro-mean()-x"                   "tbodygyro-mean()-y"                  
+[23] "tbodygyro-mean()-z"                   "tbodygyro-std()-x"                   
+[25] "tbodygyro-std()-y"                    "tbodygyro-std()-z"                   
+[27] "tbodygyrojerk-mean()-x"               "tbodygyrojerk-mean()-y"              
+[29] "tbodygyrojerk-mean()-z"               "tbodygyrojerk-std()-x"               
+[31] "tbodygyrojerk-std()-y"                "tbodygyrojerk-std()-z"               
+[33] "tbodyaccmag-mean()"                   "tbodyaccmag-std()"                   
+[35] "tgravityaccmag-mean()"                "tgravityaccmag-std()"                
+[37] "tbodyaccjerkmag-mean()"               "tbodyaccjerkmag-std()"               
+[39] "tbodygyromag-mean()"                  "tbodygyromag-std()"                  
+[41] "tbodygyrojerkmag-mean()"              "tbodygyrojerkmag-std()"              
+[43] "fbodyacc-mean()-x"                    "fbodyacc-mean()-y"                   
+[45] "fbodyacc-mean()-z"                    "fbodyacc-std()-x"                    
+[47] "fbodyacc-std()-y"                     "fbodyacc-std()-z"                    
+[49] "fbodyacc-meanfreq()-x"                "fbodyacc-meanfreq()-y"               
+[51] "fbodyacc-meanfreq()-z"                "fbodyaccjerk-mean()-x"               
+[53] "fbodyaccjerk-mean()-y"                "fbodyaccjerk-mean()-z"               
+[55] "fbodyaccjerk-std()-x"                 "fbodyaccjerk-std()-y"                
+[57] "fbodyaccjerk-std()-z"                 "fbodyaccjerk-meanfreq()-x"           
+[59] "fbodyaccjerk-meanfreq()-y"            "fbodyaccjerk-meanfreq()-z"           
+[61] "fbodygyro-mean()-x"                   "fbodygyro-mean()-y"                  
+[63] "fbodygyro-mean()-z"                   "fbodygyro-std()-x"                   
+[65] "fbodygyro-std()-y"                    "fbodygyro-std()-z"                   
+[67] "fbodygyro-meanfreq()-x"               "fbodygyro-meanfreq()-y"              
+[69] "fbodygyro-meanfreq()-z"               "fbodyaccmag-mean()"                  
+[71] "fbodyaccmag-std()"                    "fbodyaccmag-meanfreq()"              
+[73] "fbodybodyaccjerkmag-mean()"           "fbodybodyaccjerkmag-std()"           
+[75] "fbodybodyaccjerkmag-meanfreq()"       "fbodybodygyromag-mean()"             
+[77] "fbodybodygyromag-std()"               "fbodybodygyromag-meanfreq()"         
+[79] "fbodybodygyrojerkmag-mean()"          "fbodybodygyrojerkmag-std()"          
+[81] "fbodybodygyrojerkmag-meanfreq()"      "angle(tbodyaccmean,gravity)"         
+[83] "angle(tbodyaccjerkmean),gravitymean)" "angle(tbodygyromean,gravitymean)"    
+[85] "angle(tbodygyrojerkmean,gravitymean)" "angle(x,gravitymean)"                
+[87] "angle(y,gravitymean)"                 "angle(z,gravitymean)"  
